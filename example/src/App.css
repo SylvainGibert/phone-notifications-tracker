@@ -1,0 +1,15 @@
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+.section {
+  padding-bottom: 20px;
+}
+
+.rv-xy-plot__axis__tick::after {
+  content: "h";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}

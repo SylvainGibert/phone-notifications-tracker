@@ -1,0 +1,77 @@
+{
+  "name": "react-db-google-sheets",
+  "version": "2.1.1",
+  "description": "React HOC for using Google Sheets as Database",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --ignore src/setupTests.js,src/__tests__ --out-dir dist --no-comments",
+    "docs": "jsdoc -c jsdoc.conf.json -d docs/ src/*.js",
+    "lint": "eslint src/",
+    "lint-staged": "lint-staged",
+    "prepublish": "rm -rf dist/* && npm run build",
+    "prettier": "prettier --single-quote --write '{,!(coverage|node_modules|docs|dist)/**/}*.{js,css,json}'",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/athersharif/metis.git"
+  },
+  "keywords": [
+    "react",
+    "hoc",
+    "google",
+    "sheets",
+    "db",
+    "database"
+  ],
+  "author": "Ather Sharif <ather.sharif@gmail.com>",
+  "license": "MIT",
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.{js,json,css},!dist/*.{js,json,css}": [
+      "npm run prettier",
+      "git add -u"
+    ]
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-react": "^7.20.3",
+    "jest": "^26.1.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdoc": "^3.6.4",
+    "lint-staged": "^10.2.11",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.19"
+  }
+}
